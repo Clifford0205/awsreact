@@ -64,7 +64,7 @@ class product extends React.Component {
     // window.twttr.widgets.load();
     if (this.state.col_newsData.length > 0) {
       var fbBtn = document.querySelectorAll(".facebook-share");
-      console.log(fbBtn);
+      // console.log(fbBtn);
       var title = encodeURIComponent(
         "Hey everyone, come & see how good I look!"
       );
@@ -85,7 +85,7 @@ class product extends React.Component {
 
   async componentDidMount() {
     const jsonObject = await checkUserState();
-    console.log("jsonObject", jsonObject);
+    // console.log("jsonObject", jsonObject);
     // p.then(jsonObject => {
     //   console.log('2', jsonObject);
     await this.setState({
@@ -102,8 +102,8 @@ class product extends React.Component {
     try {
       let id = this.props.match.params.id;
       let user_id = this.state.user_id;
-      console.log(id);
-      console.log(user_id);
+      // console.log(id);
+      // console.log(user_id);
       this.setState({ id: id });
       const response = await fetch(
         `http://18.139.60.49:5000/member/${user_id ? user_id : id}`,
@@ -120,7 +120,7 @@ class product extends React.Component {
 
       const jsonObject = await response.json();
 
-      console.log(jsonObject);
+      // console.log(jsonObject);
       await this.setState({
         myMemberData: jsonObject,
         m_photo: jsonObject[0].m_photo,
@@ -131,7 +131,7 @@ class product extends React.Component {
       if (jsonObject[0].c_product !== null) {
         if (JSON.parse(jsonObject[0].c_product).length > 0) {
           //拿到收藏的產品資訊
-          console.log(JSON.parse(jsonObject[0].c_product).length);
+          // console.log(JSON.parse(jsonObject[0].c_product).length);
           this.getProduct();
           
         }
@@ -160,12 +160,12 @@ class product extends React.Component {
     });
 
     const productObj = await rescourse.json();
-    console.log(productObj);
+    // console.log(productObj);
     await this.setState({ col_newsData: productObj }, () =>
       console.log(this.state.col_newsData)
     );
 
-    console.log(productObj);
+    // console.log(productObj);
   };
 
   //拿到SQL購買的商品
@@ -185,19 +185,19 @@ class product extends React.Component {
     // if (!response.ok) throw new Error(response.statusText);
 
     const jsonObject = await response.json();
-    console.log(jsonObject);
+    // console.log(jsonObject);
 
     await this.setState({orders:jsonObject})
   };
 
   //取消訂單
   cancelOrder = id => () => {
-    console.log(id);
+    // console.log(id);
     for (let s in this.state.orders) {
-      console.log(this.state.orders[s].sid);
+      // console.log(this.state.orders[s].sid);
 
       if (this.state.orders[s].sid == id) {
-        console.log("刪除");
+        // console.log("刪除");
         var sendObj = {
           id: id
         };
@@ -212,7 +212,7 @@ class product extends React.Component {
         })
           .then(res => res.json())
           .then(obj => {
-            console.log(obj);
+            // console.log(obj);
             this.getBuy();
           })
 
@@ -238,8 +238,8 @@ class product extends React.Component {
 
   handleTitleClick = e => {
     this.setState({ nowPage: true });
-    console.log(e.target.id);
-    console.log(e.target.className);
+    // console.log(e.target.id);
+    // console.log(e.target.className);
     let Allbox = document.querySelectorAll(".Allbox");
     let AllItem = document.querySelectorAll(".nav-link");
     for (var i = 0; i < Allbox.length; i++) {
@@ -255,12 +255,12 @@ class product extends React.Component {
 
   //刪除收藏還要更新SQL
   handleCancel = id => () => {
-    console.log(this.state.myCollect);
-    console.log(id);
+    // console.log(this.state.myCollect);
+    // console.log(id);
     const newData = this.state.myCollect.filter((item, index) => item !== id);
-    console.log(newData);
+    // console.log(newData);
     this.setState({ myCollect: newData }, () =>
-      console.log(this.state.myCollect)
+       console.log(this.state.myCollect)
     );
 
     var sendObj = {
@@ -268,7 +268,7 @@ class product extends React.Component {
       user_id: this.state.user_id
     };
 
-    console.log(sendObj);
+    // console.log(sendObj);
 
     fetch(`http://18.139.60.49:5000/c_product`, {
       credentials: "include",
@@ -281,7 +281,7 @@ class product extends React.Component {
     })
       .then(res => res.json())
       .then(obj => {
-        console.log(obj);
+        // console.log(obj);
         this.getProduct();
       })
 
@@ -301,14 +301,14 @@ class product extends React.Component {
       
 
       for (let s in orderData) {
-        console.log(s)
-        console.log(orderData[s].cart)
+        // console.log(s)
+        // console.log(orderData[s].cart)
         orderData[s].cart2 = JSON.parse(orderData[s].cart);
         
       }
 
 
-      console.log(orderData);
+      // console.log(orderData);
     }
 
 

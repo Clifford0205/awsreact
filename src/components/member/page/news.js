@@ -50,7 +50,7 @@ class news extends React.Component {
     // window.twttr.widgets.load();
     if (this.state.col_newsData.length > 0) {
       var fbBtn = document.querySelectorAll(".facebook-share");
-      console.log(fbBtn);
+      // console.log(fbBtn);
       var title = encodeURIComponent(
         "Hey everyone, come & see how good I look!"
       );
@@ -71,7 +71,7 @@ class news extends React.Component {
 
   async componentDidMount() {
     const jsonObject = await checkUserState();
-    console.log("jsonObject", jsonObject);
+    // console.log("jsonObject", jsonObject);
     // p.then(jsonObject => {
     //   console.log('2', jsonObject);
     await this.setState({
@@ -87,9 +87,9 @@ class news extends React.Component {
     try {
       let id = this.props.match.params.id;
       let user_id = this.state.user_id;
-      console.log(id);
+      // console.log(id);
       console.log(user_id);
-      this.setState({ id: id });
+      // this.setState({ id: id });
       const response = await fetch(
         `http://18.139.60.49:5000/member/${user_id ? user_id : id}`,
         {
@@ -105,8 +105,8 @@ class news extends React.Component {
 
       const jsonObject = await response.json();
 
-      console.log(jsonObject);
-      console.log(JSON.parse(jsonObject[0].collection));
+      // console.log(jsonObject);
+      // console.log(JSON.parse(jsonObject[0].collection));
       await this.setState({
         myMemberData: jsonObject,
         m_photo: jsonObject[0].m_photo,
@@ -118,8 +118,8 @@ class news extends React.Component {
       if (jsonObject[0].colletion !== null) {
         if (JSON.parse(jsonObject[0].collection).length > 0) {
           //拿到收藏的新聞資訊
-          console.log(JSON.parse(jsonObject[0].collection).length);
-          console.log(this.state.myCollect);
+          // console.log(JSON.parse(jsonObject[0].collection).length);
+          // console.log(this.state.myCollect);
           this.getNews();
         }
       } else {
@@ -147,12 +147,12 @@ class news extends React.Component {
     });
 
     const newsObj = await rescourse.json();
-    console.log(newsObj);
+    // console.log(newsObj);
     await this.setState({ col_newsData: newsObj }, () =>
       console.log(this.state.col_newsData)
     );
 
-    console.log(newsObj);
+    // console.log(newsObj);
   };
 
   handleFormInputChange = event => {
@@ -171,10 +171,10 @@ class news extends React.Component {
 
   //刪除收藏還要更新SQL
   handleCancel = id => () => {
-    console.log(this.state.myCollect);
-    console.log(id);
+    // console.log(this.state.myCollect);
+    // console.log(id);
     const newData = this.state.myCollect.filter((item, index) => item !== id);
-    console.log(newData);
+    // console.log(newData);
     this.setState({ myCollect: newData }, () =>
       console.log(this.state.myCollect)
     );
@@ -184,7 +184,7 @@ class news extends React.Component {
       user_id: this.state.user_id
     };
 
-    console.log(sendObj);
+    // console.log(sendObj);
 
     fetch(`http://18.139.60.49:5000/sqlcollect`, {
       credentials: "include",
@@ -197,7 +197,7 @@ class news extends React.Component {
     })
       .then(res => res.json())
       .then(obj => {
-        console.log(obj);
+        // console.log(obj);
         this.getNews();
       })
       // .then(this.setState({myCollect:newData}))

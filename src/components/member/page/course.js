@@ -49,7 +49,7 @@ class course extends React.Component {
     // window.twttr.widgets.load();
     if (this.state.col_newsData.length > 0) {
       var fbBtn = document.querySelectorAll(".facebook-share");
-      console.log(fbBtn);
+      // console.log(fbBtn);
       var title = encodeURIComponent(
         "Hey everyone, come & see how good I look!"
       );
@@ -71,7 +71,7 @@ class course extends React.Component {
   async componentDidMount() {
     //載入session
     const jsonObject = await checkUserState();
-    console.log("jsonObject", jsonObject);
+    // console.log("jsonObject", jsonObject);
     // p.then(jsonObject => {
     //   console.log('2', jsonObject);
     await this.setState({
@@ -89,8 +89,8 @@ class course extends React.Component {
     try {
       let id = this.props.match.params.id;
       let user_id = this.state.user_id;
-      console.log(id);
-      console.log(user_id);
+      // console.log(id);
+      // console.log(user_id);
       this.setState({ id: id });
       const response = await fetch(
         `http://18.139.60.49:5000/member/${user_id ? user_id : id}`,
@@ -107,7 +107,7 @@ class course extends React.Component {
 
       const jsonObject = await response.json();
 
-      console.log(jsonObject);
+      // console.log(jsonObject);
       await this.setState({
         myMemberData: jsonObject,
         m_photo: jsonObject[0].m_photo,
@@ -119,7 +119,7 @@ class course extends React.Component {
       if (jsonObject[0].c_course !== null) {
         if (JSON.parse(jsonObject[0].c_course).length > 0) {
           //拿到收藏的新聞資訊
-          console.log(JSON.parse(jsonObject[0].c_course).length);
+          // console.log(JSON.parse(jsonObject[0].c_course).length);
           //拿到收藏的課程資訊
           this.getCourse();
         }
@@ -127,7 +127,7 @@ class course extends React.Component {
         this.setState({ myCollect: [] });
       }
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     } finally {
     }
   };
@@ -150,7 +150,7 @@ class course extends React.Component {
     const courseObj = await rescourse.json();
     await this.setState({ col_newsData: courseObj });
 
-    console.log(courseObj);
+    // console.log(courseObj);
   };
 
   handleFormInputChange = event => {
@@ -176,8 +176,8 @@ class course extends React.Component {
 
   handleTitleClick = e => {
     this.setState({ nowPage: true });
-    console.log(e.target.id);
-    console.log(e.target.className);
+    // console.log(e.target.id);
+    // console.log(e.target.className);
     let Allbox = document.querySelectorAll(".Allbox");
     let AllItem = document.querySelectorAll(".nav-link");
     for (var i = 0; i < Allbox.length; i++) {
@@ -193,10 +193,10 @@ class course extends React.Component {
 
   //刪除收藏還要更新SQL
   handleCancel = id => () => {
-    console.log(this.state.myCollect);
-    console.log(id);
+    // console.log(this.state.myCollect);
+    // console.log(id);
     const newData = this.state.myCollect.filter((item, index) => item !== id);
-    console.log(newData);
+    // console.log(newData);
     this.setState({ myCollect: newData }, () =>
       console.log(this.state.myCollect)
     );
@@ -206,7 +206,7 @@ class course extends React.Component {
       user_id: this.state.user_id
     };
 
-    console.log(sendObj);
+    // console.log(sendObj);
 
     fetch(`http://18.139.60.49:5000/collect`, {
       credentials: "include",
@@ -219,7 +219,7 @@ class course extends React.Component {
     })
       .then(res => res.json())
       .then(obj => {
-        console.log(obj);
+        // console.log(obj);
         this.getCourse();
       })
 
@@ -228,7 +228,7 @@ class course extends React.Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     let data = this.state.col_newsData;
 
     if (

@@ -66,7 +66,7 @@ class Sidebar extends React.Component {
   // };
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <>
         <Col md={3} className="member-sidebar">

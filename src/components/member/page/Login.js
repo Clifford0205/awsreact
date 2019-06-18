@@ -41,7 +41,7 @@ class Login extends React.Component {
 
     this.setState({ [name]: value })
 
-    console.log({ [name]: value })
+    // console.log({ [name]: value })
   }
 
   handleModalFormInputSave = async () => {
@@ -49,7 +49,7 @@ class Login extends React.Component {
       m_email: this.state.login_email,
       m_password: this.state.login_password,
     }
-    console.log(item)
+    // console.log(item)
     const newData = [item, ...this.state.memberData]
 
     // var formData = new FormData();
@@ -93,7 +93,7 @@ class Login extends React.Component {
 
       const jsonObject = await response.json()
 
-      console.log(jsonObject)
+      // console.log(jsonObject)
 
       await this.setState({ memberData: [newData] }, () => {
         // this.handleModalClose();
@@ -151,7 +151,7 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     return (
       <>
         <RAlert />

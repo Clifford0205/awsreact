@@ -65,10 +65,10 @@ class edit extends React.Component {
     try {
       let id = this.props.match.params.id
       let user_id = this.state.user_id
-      console.log(id)
-      console.log(user_id)
+      // console.log(id)
+      // console.log(user_id)
       this.setState({ id: id })
-      console.log(this.state.id)
+      // console.log(this.state.id)
 
       const response = await fetch(
         `http://18.139.60.49:5000/member/${user_id ? user_id : id}`,
@@ -85,7 +85,7 @@ class edit extends React.Component {
 
       const jsonObject = await response.json()
 
-      console.log(jsonObject)
+      // console.log(jsonObject)
       await this.setState({
         myMemberData: jsonObject,
         m_name: jsonObject[0].m_name,
@@ -99,7 +99,7 @@ class edit extends React.Component {
         m_photo: jsonObject[0].m_photo,
       })
     } catch (e) {
-      console.log(e)
+      // console.log(e)
     } finally {
     }
   }
@@ -124,7 +124,7 @@ class edit extends React.Component {
 
   handlepicChange2 = e => {
     // console.log(e.target.files[0]);
-    console.log(e.target.files[0])
+    // console.log(e.target.files[0])
     this.fileInfo2(e.target.files[0])
     this.setState({ new_photo: e.target.files[0] })
   }
@@ -144,7 +144,7 @@ class edit extends React.Component {
   handleChange = data => {
     this.setState({ m_city: data.county })
     this.setState({ m_town: data.district })
-    console.log(this.state)
+    // console.log(this.state)
   }
 
   handleModalFormInputeditChecked = async () => {
@@ -158,7 +158,7 @@ class edit extends React.Component {
       m_address: this.state.m_address,
       m_photo: this.state.m_photo,
     }
-    console.log(item)
+    // console.log(item)
     const none = []
     const newData = [item, ...this.state.memberData]
 
@@ -166,7 +166,7 @@ class edit extends React.Component {
 
     //手機號碼驗證
     let mobile_pattern = /^09\d{2}\-?\d{3}\-?\d{3}$/
-    console.log(document.querySelector('#m_mobile').value)
+    // console.log(document.querySelector('#m_mobile').value)
     if (!mobile_pattern.test(document.querySelector('#m_mobile').value)) {
       document.querySelector('#m_mobile').style.borderColor = 'red'
       document.querySelector('#m_mobileHelp').innerHTML =
@@ -199,7 +199,7 @@ class edit extends React.Component {
       try {
         // const data = item;
         let id = this.props.match.params.id
-        console.log(id)
+        // console.log(id)
         const response = await fetch(`http://18.139.60.49:5000/member/${id}`, {
           credentials: 'include',
           method: 'PUT',
@@ -212,7 +212,7 @@ class edit extends React.Component {
 
         const jsonObject = await response.json()
 
-        console.log('PUT', jsonObject)
+        // console.log('PUT', jsonObject)
 
         await this.setState(
           {
@@ -270,7 +270,7 @@ class edit extends React.Component {
 
             if (jsonObject.success) {
               const sessionObj = await checkUserState()
-              console.log('點擊後改變session', sessionObj)
+              // console.log('點擊後改變session', sessionObj)
               //  fetch('http://18.139.60.49:5000/is_logined', {
               //   credentials: 'include',
               //   headers: new Headers({
@@ -319,8 +319,8 @@ class edit extends React.Component {
   }
 
   render() {
-    console.log('state', this.state)
-    console.log(this.state.user_id)
+    // console.log('state', this.state)
+    // console.log(this.state.user_id)
     if (
       (this.state.id != this.state.user_id &&
         this.state.id &&
@@ -335,7 +335,7 @@ class edit extends React.Component {
           <RAlert />
           <Container className="member_edit">
             <Row>
-              {console.log(this.state.id)}
+              {/* {console.log(this.state.id)} */}
               <Sidebar
                 src={this.state.m_photo}
                 name={this.state.m_oldname}

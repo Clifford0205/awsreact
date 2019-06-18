@@ -45,22 +45,22 @@ class InstallModal extends React.Component {
 
     this.setState({ [name]: value })
 
-    console.log({ [name]: value })
+    // console.log({ [name]: value })
   }
 
   handlepicChange = e => {
     // console.log(e.target.files[0]);
-    console.log(e.target.files[0])
+    // console.log(e.target.files[0])
     this.fileInfo(e.target.files[0])
     this.setState({ m_photo: e.target.files[0] })
-    console.log(this.state.m_photo)
+    // console.log(this.state.m_photo)
   }
 
   fileInfo(theFile) {
     var reader = new FileReader()
     reader.readAsDataURL(theFile)
     reader.addEventListener('loadend', function(event) {
-      //console.log(event.target.result);
+      // console.log(event.target.result);
       //<img src="" class="" />
       var photo = document.querySelector('.thumb')
       photo.setAttribute('src', event.target.result)
@@ -77,14 +77,14 @@ class InstallModal extends React.Component {
       m_password: this.state.m_password,
       m_photo: this.state.m_photo,
     }
-    console.log(item)
+    // console.log(item)
     const newData = [item, ...this.state.memberData]
 
     let isPassed = true
 
     //手機號碼驗證
     let mobile_pattern = /^09\d{2}\-?\d{3}\-?\d{3}$/
-    console.log(document.querySelector('#m_mobile').value)
+    // console.log(document.querySelector('#m_mobile').value)
     if (!mobile_pattern.test(document.querySelector('#m_mobile').value)) {
       document.querySelector('#m_mobile').style.borderColor = 'red'
       document.querySelector('#m_mobileHelp').innerHTML =
@@ -113,7 +113,7 @@ class InstallModal extends React.Component {
         '兩次密碼輸入不一致!'
       isPassed = false
     }
-    console.log(isPassed)
+    // console.log(isPassed)
 
     if (isPassed) {
       var formData = new FormData()
@@ -126,7 +126,7 @@ class InstallModal extends React.Component {
       this.state.m_photo == 'https://images2.imgbox.com/b0/c3/sQxunS2i_o.png'
         ? formData.append('m_photo', this.state.m_photo)
         : formData.append('avatar', this.state.m_photo)
-      console.log(formData)
+      // console.log(formData)
       try {
         // const data = item;
 
@@ -141,7 +141,7 @@ class InstallModal extends React.Component {
 
         const jsonObject = await response.json()
 
-        console.log(jsonObject)
+        // console.log(jsonObject)
 
         await this.setState({ memberData: newData }, () => {
           // alert('資料已成功新增!');

@@ -55,7 +55,7 @@ class road extends React.Component {
     // window.twttr.widgets.load();
     if (this.state.col_routeData.length > 0) {
       var fbBtn = document.querySelectorAll('.facebook-share');
-      console.log(fbBtn);
+      // console.log(fbBtn);
       var title = encodeURIComponent(
         'Hey everyone, come & see how good I look!'
       );
@@ -78,7 +78,7 @@ class road extends React.Component {
 
   async componentDidMount() {
     const jsonObject = await checkUserState();
-    console.log('jsonObject', jsonObject);
+    // console.log('jsonObject', jsonObject);
     // p.then(jsonObject => {
     //   console.log('2', jsonObject);
     await this.setState({
@@ -95,8 +95,8 @@ class road extends React.Component {
     try {
       let id = this.props.match.params.id;
       let user_id = this.state.user_id;
-      console.log(id);
-      console.log(user_id);
+      // console.log(id);
+      // console.log(user_id);
       this.setState({ id: id });
       const response = await fetch(
         `http://18.139.60.49:5000/member/${user_id ? user_id : id}`,
@@ -113,9 +113,9 @@ class road extends React.Component {
 
       const jsonObject = await response.json();
 
-      console.log(jsonObject);
-      console.log('hhhhhhhhh', jsonObject[0].r_collection);
-      console.log(JSON.parse(jsonObject[0].r_collection));
+      // console.log(jsonObject);
+      // console.log('hhhhhhhhh', jsonObject[0].r_collection);
+      // console.log(JSON.parse(jsonObject[0].r_collection));
       await this.setState({
         myMemberData: jsonObject,
         m_photo: jsonObject[0].m_photo,
@@ -124,18 +124,18 @@ class road extends React.Component {
         myCollect: JSON.parse(jsonObject[0].r_collection),
       });
       if (jsonObject[0].r_collection !== null) {
-        console.log(jsonObject[0].r_collection);
+        // console.log(jsonObject[0].r_collection);
         if (JSON.parse(jsonObject[0].r_collection).length > 0) {
           //拿到收藏的產品資訊
-          console.log(JSON.parse(jsonObject[0].r_collection).length);
-          console.log(this.state.myCollect);
+          // console.log(JSON.parse(jsonObject[0].r_collection).length);
+          // console.log(this.state.myCollect);
           this.getRoute();
         }
       } else {
         this.setState({ myCollect: [] });
       }
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     } finally {
     }
   };
@@ -156,18 +156,18 @@ class road extends React.Component {
     });
 
     const routeObj = await rescourse.json();
-    console.log(routeObj);
+    // console.log(routeObj);
     await this.setState({ col_routeData: routeObj }, () =>
       console.log(this.state.col_routeData)
     );
 
-    console.log(routeObj);
+    // console.log(routeObj);
   };
 
   handleTitleClick = e => {
     this.setState({ nowPage: true });
-    console.log(e.target.id);
-    console.log(e.target.className);
+    // console.log(e.target.id);
+    // console.log(e.target.className);
     let Allbox = document.querySelectorAll('.Allbox');
     let AllItem = document.querySelectorAll('.nav-link');
     for (var i = 0; i < Allbox.length; i++) {
@@ -183,10 +183,10 @@ class road extends React.Component {
 
   //刪除收藏還要更新SQL
   handleCancel = id => () => {
-    console.log(this.state.myCollect);
-    console.log(id);
+    // console.log(this.state.myCollect);
+    // console.log(id);
     const newData = this.state.myCollect.filter((item, index) => item !== id);
-    console.log(newData);
+    // console.log(newData);
     this.setState({ myCollect: newData }, () =>
       console.log(this.state.myCollect)
     );
@@ -196,7 +196,7 @@ class road extends React.Component {
       user_id: this.state.user_id,
     };
 
-    console.log(sendObj);
+    // console.log(sendObj);
 
     fetch(`http://18.139.60.49:5000/c_route`, {
       credentials: 'include',
@@ -209,7 +209,7 @@ class road extends React.Component {
     })
       .then(res => res.json())
       .then(obj => {
-        console.log(obj);
+        // console.log(obj);
         this.getRoute();
       })
 
@@ -235,19 +235,19 @@ class road extends React.Component {
     // if (!response.ok) throw new Error(response.statusText);
 
     const jsonObject = await response.json();
-    console.log(jsonObject);
+    // console.log(jsonObject);
 
     await this.setState({ rise_routeData: jsonObject });
   };
 
   //刪除收藏的路線
   riseCancel = id => () => {
-    console.log(id);
+    // console.log(id);
     for (let s in this.state.rise_routeData) {
-      console.log(this.state.rise_routeData[s].r_sid);
+      // console.log(this.state.rise_routeData[s].r_sid);
 
       if (this.state.rise_routeData[s].r_sid == id) {
-        console.log('刪除');
+        // console.log('刪除');
         var sendObj = {
           id: id,
         };
@@ -262,7 +262,7 @@ class road extends React.Component {
         })
           .then(res => res.json())
           .then(obj => {
-            console.log(obj);
+            // console.log(obj);
             this.getRaise();
           })
 

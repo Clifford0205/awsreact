@@ -39,7 +39,7 @@ class password extends React.Component {
 
   async componentDidMount() {
     const jsonObject = await checkUserState();
-    console.log('jsonObject', jsonObject);
+    // console.log('jsonObject', jsonObject);
     // p.then(jsonObject => {
     //   console.log('2', jsonObject);
     await this.setState({
@@ -51,8 +51,8 @@ class password extends React.Component {
     try {
       let id = this.props.match.params.id;
       let user_id = this.state.user_id;
-      console.log(id);
-      console.log(user_id);
+      // console.log(id);
+      // console.log(user_id);
       this.setState({ id: id });
       const response = await fetch(
         `http://18.139.60.49:5000/member/${user_id ? user_id : id}`,
@@ -69,7 +69,7 @@ class password extends React.Component {
 
       const jsonObject = await response.json();
 
-      console.log(jsonObject);
+      // console.log(jsonObject);
       await this.setState({
         myMemberData: jsonObject,
         m_photo: jsonObject[0].m_photo,
@@ -100,7 +100,7 @@ class password extends React.Component {
     const item = {
       m_password: this.state.new_password,
     };
-    console.log(item);
+    // console.log(item);
     const newData = [item, ...this.state.memberData];
 
     if (this.state.old_password !== this.state.checkOld_password) {
@@ -133,12 +133,12 @@ class password extends React.Component {
     formData.append('m_password', this.state.new_password);
     // formData.append('m_mobile', this.state.m_mobile);
 
-    console.log(formData);
+    // console.log(formData);
 
     try {
       // const data = item;
       let id = this.props.match.params.id;
-      console.log(id);
+      // console.log(id);
       const response = await fetch(`http://18.139.60.49:5000/member/${id}`, {
         method: 'PUT',
         body: formData,
@@ -150,9 +150,9 @@ class password extends React.Component {
 
       const jsonObject = await response.json();
 
-      console.log(this.state.new_password.length);
+      // console.log(this.state.new_password.length);
 
-      console.log(jsonObject);
+      // console.log(jsonObject);
 
       await this.setState({ memberData: newData }, () => {
         // alert('資料已成功新增!');

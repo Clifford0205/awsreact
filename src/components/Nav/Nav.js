@@ -38,7 +38,7 @@ class NavTop extends React.Component {
   }
 
   onRouteChanged() {
-    console.log('ROUTE CHANGED');
+    // console.log('ROUTE CHANGED');
     this.checkUserState();
   }
 
@@ -108,7 +108,7 @@ class NavTop extends React.Component {
 
       const jsonObject = await response.json();
 
-      console.log('Nav', jsonObject);
+      // console.log('Nav', jsonObject);
       await this.setState({
         loginUser: jsonObject.loginUser,
         isLogined: jsonObject.isLogined,
@@ -117,7 +117,7 @@ class NavTop extends React.Component {
         session_photo: jsonObject.session_photo,
       });
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     } finally {
     }
   };
@@ -134,7 +134,7 @@ class NavTop extends React.Component {
         }),
       }).then(localStorage.removeItem('meber'));
       const jsonObject = await response.json();
-      console.log(jsonObject);
+      // console.log(jsonObject);
       await this.setState({
         loginUser: jsonObject.loginUser,
         isLogined: jsonObject.isLogined,
@@ -145,7 +145,7 @@ class NavTop extends React.Component {
       // document.location.href = '/';
       this.props.history.push('/');
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     }
   };
 
