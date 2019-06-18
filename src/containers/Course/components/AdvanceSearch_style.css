@@ -1,0 +1,64 @@
+.r_as_tag {
+    background-color: white;
+    border: 2px solid black;
+    padding: 0 1.9rem;
+    margin: 0 1.3rem;
+}
+
+@media (max-width: 768px) {
+    .r_as_tag {
+        padding: 0 1.2rem;
+        margin: 0 0.7rem;
+    }
+}
+
+.r_as_add_new_btn {
+    background-color: var(--main_red);
+    border: 0;
+    color: #000000;
+    padding: 3px 5rem;
+}
+
+.r_as_select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    background: url('./sort-down-solid.svg') no-repeat 90% 0%;
+    background-size: 1rem;
+    max-width: 20rem;
+    color: #000000;
+}
+
+.r_as_select option {
+    color: #000000;
+}
+
+.r_as_search {
+    background-color: #f6f6f6;
+    border: 0;
+    width: 70%;
+    height: 2rem;
+    max-width: 370px;
+    padding-left: 2rem;
+    background: url('./search-solid.svg') no-repeat 2% 45%, #f6f6f6;
+    background-size: 1.2rem;
+}
+
+.r_as_search_btn {
+    border: 0;
+    background-color: #000000;
+    height: 2rem;
+    padding-top: 1px;
+}
+
+.r_as_fa_search {
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 992px) {
+}
+

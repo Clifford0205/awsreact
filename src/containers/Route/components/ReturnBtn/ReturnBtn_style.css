@@ -1,0 +1,11 @@
+.r_return_btn {
+  color: var(--main_red);
+  font-weight: 600;
+}
+.r_return_btn:hover {
+  font-weight: 700;
+  color: var(--main_red);
+  text-decoration: none;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}

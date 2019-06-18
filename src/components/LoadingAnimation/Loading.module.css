@@ -1,0 +1,28 @@
+.LoadingTop {
+  height: 50vh;
+  width: 100%;
+  background: #e14040;
+}
+
+.LoadingBtm {
+  height: 50vh;
+  width: 100%;
+  background: #e14040;
+}
+
+.LoadingText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  color: black;
+  margin: 0 auto;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 30px;
+}

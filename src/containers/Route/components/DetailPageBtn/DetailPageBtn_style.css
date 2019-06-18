@@ -1,0 +1,44 @@
+.r_d_buttons {
+    border-radius: 0;
+    border: none;
+    padding: 0.6rem 3rem;
+}
+
+.succeed_btn {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.r_like_button {
+    background-color: var(--main_red);
+    color: #ffffff;
+}
+
+.r_SNSButtons a {
+    font-size: 1.3rem;
+    color: var(--main_red);
+}
+.r_SNSButtons div {
+    margin: 0.5rem 2rem;
+}
+.ffbs path {
+    fill: var(--main_red);
+}
+
+@media (max-width: 1200px) {
+    .r_SNSButtons a {
+        font-size: 1.2rem;
+    }
+    .r_SNSButtons div {
+        margin: 0.5rem 1rem;
+    }
+    .r_d_buttons {
+        padding: 0.4rem 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .r_d_buttons {
+        padding: 0.3rem 1.1rem;
+    }
+}

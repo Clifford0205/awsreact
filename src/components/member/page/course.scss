@@ -1,0 +1,79 @@
+@mixin md {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+.member_course {
+  .detailArea {
+    margin-top: 200px;
+
+    @include md {
+      margin-top: 0;
+    }
+
+    #box3,
+    #box4 {
+      display: none;
+    }
+
+    .box1,
+    .box2 {
+      display: none;
+      width: 100%;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .nav-link {
+      padding: 0;
+    }
+  }
+
+  .card {
+    max-width: 800px !important;
+    margin-top: 40px;
+    border-radius: 0;
+
+    .ellipsis {
+      overflow: hidden;
+      height: 70px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .cancel{
+      max-height: 30px;
+    }
+
+    .card-text2{
+      margin-top: 15px;
+    }
+
+    h5 {
+      margin-bottom: 0;
+    }
+
+    a,
+    a:link {
+      color: #ffffff;
+    }
+
+    .btn {
+      border-radius: 0;
+    }
+
+    .btn-dark{
+      background-color: #000000;
+      border-color: #000000;
+    }
+
+    .fab {
+      color: #f52a2a;
+      font-size: 1.6rem;
+      margin-right: 20px;
+    }
+  }
+}

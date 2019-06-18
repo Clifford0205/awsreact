@@ -1,0 +1,210 @@
+.Navbar {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 9;
+}
+
+.Background {
+  /* background: linear-gradient(180deg, rgb(0, 0, 0, 10), rgb(0, 0, 0, 0.3)); */
+  position: relative;
+  background: black;
+  width: 85%;
+  max-height: 49px;
+  padding: 0.5rem 1rem;
+  overflow: visible;
+  transition: 0.5s;
+}
+.r_h_56 {
+  height: 56px;
+}
+.Right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 10vh;
+  width: 15%;
+  background-color: #f52a2a;
+}
+.Right > div {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.Close {
+  transform: translateY(-10vh);
+}
+
+/* .Navbar {
+  width: 100%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+} */
+
+.Menu {
+  margin: 0 auto;
+  display: none;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  height: 49px;
+  /* background-color: white; */
+  cursor: pointer;
+}
+
+.Menu div {
+  width: 80%;
+  height: 5px;
+  background: black;
+}
+
+.Nav {
+  /* margin: 0 auto; */
+  /* left: 0; */
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 49px;
+  position: absolute;
+  top: 0;
+  transition: 0.5s;
+}
+.Nav div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.Nav li {
+  flex-basis: 1;
+  /* color: rgb(196, 184, 184); */
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  /* letter-spacing: 10px; */
+  background: rgb(255, 255, 255, 0);
+  position: relative;
+  transition: 0.5s;
+}
+.nav_m_w_80 {
+  min-width: 80px;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.Nav a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  transition: all 0.3s ease-out;
+  position: relative;
+  color: white !important;
+}
+
+.Nav a:hover {
+  cursor: pointer;
+  color: var(--main_red);
+  /* color: white; */
+  text-shadow: 0 2px 4px rgba(204, 31, 31, 0.5);
+  /* background: var(--main_red); */
+  height: 100%;
+}
+
+.Nav li div {
+  position: absolute;
+  height: 3px;
+  width: 0;
+  bottom: -5px;
+  z-index: 1;
+  /* background: rgb(255, 6, 0, 0.9); */
+  /* background: var(--main_red); */
+  opacity: 0;
+  transition: width 0.5s ease-out, opacity 0.5s linear;
+  /* transform: translateZ(400px); */
+}
+
+.NavItems {
+  color: "white";
+  font-size: "1.2rem";
+}
+
+.Nav a:hover :last-child {
+  /* background: linear-gradient(
+        rgb(255, 255, 255, 0.2),
+        rgb(255, 6, 0, 0.9),
+        rgb(255, 255, 255, 0.2)
+    ); */
+  opacity: 0.7;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .Nav {
+    height: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    /* display: none; */
+    width: 100vw;
+    /* background: rgba(0, 0, 0, 0.5); */
+    background: black;
+    position: absolute;
+    top: 49px;
+    left: 0;
+  }
+
+  .Menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    margin: 0 auto;
+    height: 25px;
+    align-items: center;
+  }
+  .Menu div {
+    background-color: white;
+    height: 3px;
+    width: 20px;
+  }
+
+  .Open {
+    transition: 0.5s;
+    height: calc(100vh - 49px);
+  }
+
+  .Nav li {
+    margin: 5%;
+  }
+
+  .Nav li a {
+    font-size: 2rem;
+  }
+
+  .Nav > div > div > div {
+    margin-bottom: 15%;
+  }
+
+  .Background {
+    /* background: rgba(0, 0, 0, 0.5); */
+    width: 70%;
+  }
+  .Right {
+    width: 30%;
+  }
+}

@@ -1,0 +1,30 @@
+.footers {
+    /* z-index: -1; */
+    /* background: red; */
+    background: black;
+    color: white;
+}
+
+.footer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    /* z-index: -1; */
+}
+
+.left {
+    font-size: 1.2rem;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right {
+    font-size: 0.8rem;
+    margin-left: 20px;
+    width: 50%;
+}
+
+li {
+    margin-bottom: 5px;
+}

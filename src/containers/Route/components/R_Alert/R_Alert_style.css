@@ -1,0 +1,100 @@
+.r_alert_bg {
+  background-color: rgba(255, 255, 255, 0.542);
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: bgOpacity 0.2s ease-out forwards;
+}
+.alertokbtnred {
+  border: 0;
+  background-color: red;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 5px 15px;
+}
+.alertokbtnblack {
+  border: 0;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 5px 15px;
+}
+@keyframes bgOpacity {
+  to {
+    opacity: 100;
+  }
+}
+.r_alert_box {
+  background-color: #ffffff;
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2);
+  height: 35vw;
+  max-height: 300px;
+  max-width: 600px;
+  transform: translateY(-20%);
+}
+
+.r_alert_red {
+  background-color: var(--main_red);
+}
+.r_alert_black {
+  background-color: #000000;
+}
+
+.r_alert_text {
+  font-size: 2rem;
+  font-weight: 900;
+}
+.r_alert_text_red {
+  color: var(--main_red);
+}
+@media (max-width: 516px) {
+  .r_alert_text {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+}
+.r_alert_path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 1s ease-in-out forwards;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.r_alert_svg {
+  z-index: 101;
+  max-width: 200px;
+}
+
+.st0 {
+  fill: none;
+  /* stroke: #1d1d1b; */
+  stroke: white;
+  stroke-width: 12;
+  stroke-miterlimit: 10;
+}
+.st1 {
+  fill: none;
+  /* stroke: #1d1d1b; */
+  stroke: white;
+  stroke-width: 14;
+  stroke-miterlimit: 10;
+}
+
+.st2 {
+  fill: none;
+  stroke-width: 12;
+  stroke-miterlimit: 10;
+}
+.st3 {
+  fill: none;
+  stroke-width: 14;
+  stroke-miterlimit: 10;
+}

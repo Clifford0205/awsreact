@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+  /* overflow-x: hidden;
+  overflow-y: visible; */
+}
+html {
+  font-size: 14px;
+}
+:root {
+  --main_red: #f52a2a;
+  --main_gray1: #f3f3f3;
+  --main_gray2: #ccc;
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; */
+  font-family: "Noto Sans TC", "Noto Sans JP", "Noto Sans KR", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.r_color_red {
+  color: var(--main_red);
+}
+.r_color_white {
+  color: #ffffff;
+}
+.r_fw_extra_bold {
+  font-weight: 900;
+}
+.r_fw_bold {
+  font-weight: 700;
+}
+.r_fw_medium {
+  font-weight: 500;
+}
+.r_fs_12 {
+  font-size: 0.8rem;
+}
+.r_fs_14 {
+  font-size: 1rem;
+}
+.r_fs_18 {
+  font-size: 1.3rem;
+}
+
+.r_fs_20 {
+  font-size: 1.4rem;
+}
+
+.r_capsule {
+  border-radius: 500px;
+}
+
+.btn_bgc_red {
+  background-color: var(--main_red);
+}
+
+.btn_bgc_black {
+  background-color: #000000;
+}

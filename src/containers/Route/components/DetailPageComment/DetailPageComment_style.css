@@ -1,0 +1,41 @@
+:root {
+    --r_d_comment_avatar: 60px;
+}
+
+.r_single_comment {
+    background-color: #f2f2f2;
+}
+
+.r_comment_avstar {
+    height: var(--r_d_comment_avatar);
+    width: var(--r_d_comment_avatar);
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+.r_leave_comment {
+    border: 1px solid rgb(138, 138, 138);
+    height: 120px;
+}
+
+.r_comment_btn {
+    background-color: var(--main_red);
+    color: #ffffff;
+    border: 0;
+    float: right;
+}
+
+@media (max-width: 576px) {
+    .r_rdintro_rwd_con1 {
+        flex-direction: column;
+    }
+
+    :root {
+        --r_d_comment_avatar: 30px;
+    }
+
+    .r_leave_comment {
+        height: 50px;
+    }
+}

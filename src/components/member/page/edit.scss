@@ -1,0 +1,88 @@
+@mixin md {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media (max-width: 992px) {
+        @content;
+    }
+}
+
+.member_edit {
+    font-family: Noto Sans CJK TC;
+    padding-bottom: 5%;
+
+    .profileTitle{
+        font-size:18px;
+    }
+
+    .myProfile {
+        margin-top: 110px;
+
+        .member-title {
+            background-color: #f2f2f2;
+        }
+
+        ul {
+            margin-top: 110px;
+
+            li {
+                margin-bottom: 80px;
+            }
+        }
+    }
+
+    .myPhoto {
+        width: 150px;
+        height: 150px;
+        border: 1px solid #eeeeee;
+        border-radius: 50%;
+        margin-top: 100px;
+        overflow: hidden;
+    }
+
+    .thumb2 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .TWZ {
+        width: auto;
+
+        @include lg {
+            width: 100%;
+        }
+    }
+
+    .county-sel,
+    .district-sel,
+    .zipcode {
+        @include lg {
+            margin-bottom: 20px;
+        }
+    }
+
+    .form-control {
+        border-radius: 0%;
+    }
+
+    button {
+        margin-top: 50px;
+        background-color: #000000;
+        border-radius: 0;
+    }
+
+
+    .checkBtn {
+        @include lg {
+            margin-top: 50px;
+        }
+    }
+
+    .text-muted{
+        color:red !important;
+    }
+}

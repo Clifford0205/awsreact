@@ -1,0 +1,56 @@
+.FastLink {
+  opacity: 0;
+  width: 100%;
+  position: relative;
+}
+.FastLink > div {
+  padding: 0;
+}
+
+.Links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Links > div {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  width: 100%;
+  background-color: #e14040;
+  color: black;
+  text-align: center;
+  height: 5vh;
+  line-height: 5vh;
+}
+
+.Links > figure {
+  width: 100%;
+  height: 35vh;
+}
+
+.Links > figure > img {
+  object-fit: cover;
+  width: 100%;
+  min-height: 35vh;
+}
+
+.Links > a {
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  width: 10%;
+  background: #e14040;
+  position: absolute;
+  bottom: 50px;
+}
+
+@media (max-width: 992px) {
+  .Links > figure > img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
+  }
+}

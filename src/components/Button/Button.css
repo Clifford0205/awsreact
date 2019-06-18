@@ -1,0 +1,24 @@
+.button {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button button {
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  color: white;
+  /* font-family: Arial; */
+  font-size: 17px;
+  padding: 3px 42px;
+  background-color: black;
+}
+/* .button button:hover {
+    background-color: #5cbf2a;
+}
+.button button:hover:active {
+    position: relative;
+    top: 1px;
+} */

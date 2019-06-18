@@ -1,0 +1,101 @@
+@mixin md {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+.member_product {
+  .detailArea {
+    margin-top: 200px;
+
+    @include md {
+      margin-top: 0;
+    }
+
+    #box3,
+    #box4 {
+      display: none;
+    }
+
+    .box1,
+    .box2 {
+      display: none;
+      width: 100%;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .nav-link {
+      padding: 0;
+    }
+  }
+
+  .card {
+    max-width: 800px !important;
+    margin-top: 40px;
+    border-radius: 0;
+
+    .titlearea {
+      width: 250px;
+      height: 20px;
+    }
+
+    .cancel{
+      max-height: 30px;
+    }
+
+    .ellipsis {
+      margin-bottom: 120px;
+      line-height: 24px;
+      height: 100px;
+    }
+
+    .card-text2 {
+      margin-top: 50px;
+    }
+
+    h5 {
+      margin-bottom: 0;
+    }
+
+    a,
+    a:link {
+      color: #ffffff;
+    }
+
+    .btn {
+      border-radius: 0;
+    }
+
+    .btn-dark{
+      background-color: #000000;
+      border-color: #000000;
+    }
+
+    .textcontent {
+      height: 110px;
+    }
+
+
+    .fab {
+      color: #f52a2a;
+      font-size: 1.6rem;
+      margin-right: 20px;
+    }
+
+    .card-title{
+      font-weight: bolder;
+      font-size:16px; 
+    }
+
+    .titlename{
+      max-width: 70%;
+    }
+
+    a{
+      font-size: 1rem;
+    }
+  }
+}

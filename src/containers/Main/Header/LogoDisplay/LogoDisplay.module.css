@@ -1,0 +1,93 @@
+.DisplayLogo {
+  width: 35vw;
+  height: 55vh;
+  /* background: red; */
+  position: absolute;
+  top: 35vh;
+  right: 5vw;
+}
+
+.DisplayLogoInner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.DisplayBigLogo {
+  position: absolute;
+  left: -40vh;
+  top: 10vh;
+  width: 55vw;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.DisplaySmallLogo {
+  position: absolute;
+  top: 8vh;
+  width: 12vw;
+  height: 12vh;
+  top: 70px;
+  left: 100px;
+}
+/* 
+.DisplaySmallLogo img{
+  transform-origin: 50% 50%;
+  animation: rotating 2s linear infinite;
+} */
+
+.DisplayLogoInner img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  /* transform-origin: 50% 50%;
+  animation: rotating 2s linear infinite; */
+}
+
+.DisplayLogoText {
+  font-size: 6rem;
+  position: absolute;
+  color: white;
+  left: 0;
+  font-weight: 900;
+  letter-spacing: 15px;
+}
+
+.DisplayLogoTextSmall {
+  /* font-size: 5rem; */
+  /* position: absolute; */
+  right: 60px;
+  bottom: 20vh;
+  font-weight: 900;
+  text-align: right;
+  color: white;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  letter-spacing: 0;
+  line-height: 1rem;
+  /* margin-right: 73px !important; */
+}
+.DisplayLogoTextSmall p {
+  text-align: right;
+}
+
+@media (max-width: 992px) {
+  .DisplayLogo {
+    width: 100%;
+  }
+
+  .DisplayBigLogo {
+    left: 0;
+  }
+
+  .DisplayLogoTextSmall {
+    right: 0;
+    top: 42vh;
+  }
+  .DisplayLogoText {
+    left: 10%;
+    font-size: 5rem;
+  }
+}

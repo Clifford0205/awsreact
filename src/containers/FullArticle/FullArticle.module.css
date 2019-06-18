@@ -1,0 +1,207 @@
+.Full {
+  padding: 10% 0;
+  /* display: block; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  contain: strict;
+  z-index: 1000;
+  /* padding: 20px; */
+}
+
+.Article {
+  /* position: static; */
+  width: 80%;
+  background-color: white;
+  padding: 20px 50px;
+  margin: 0 auto;
+  /* min-height: 200vh; */
+  /* z-index: 2000; */
+}
+
+.Article figure {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.Article figure img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.Article h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Article a,
+.Article a:visited,
+.Article a:hover {
+  color: black;
+}
+
+.Collect {
+  width: 100px;
+  padding: 5px 10px;
+  cursor: pointer;
+  background: white;
+  transition: 0.5s;
+}
+
+.Collect:hover {
+  background: #e1e1e1;
+}
+
+.SocialMedia {
+  text-align: center;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SocialMedia > div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.SocialMedia > div > span {
+  margin-left: 50px;
+}
+
+.Panel {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Panel div {
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.Comment {
+  width: 100%;
+  background-color: #f7f7f8;
+  padding: 20px;
+  margin: 10px 0;
+  margin-top: 30px;
+  color: black;
+}
+
+.Comment > * {
+  margin-bottom: 10px;
+}
+
+.Comment span {
+  cursor: pointer;
+  padding: 3px 10px;
+  margin-left: 5px;
+  transition: 0.5s;
+  white-space: nowrap;
+}
+
+.Reply {
+  width: 90%;
+  margin-left: 10%;
+  background-color: #f7f7f8;
+  padding: 20px;
+}
+
+.CommentArea {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.CommentArea > textarea {
+  resize: none;
+  height: 100px;
+}
+
+.CommentButton {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.CommentButton span {
+  font-size: 0.5rem;
+  color: gray;
+  margin: 10px;
+}
+
+.CommentButton canvas {
+  width: 100px;
+  height: 100px;
+}
+
+.Verify {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ReplyInput input {
+  width: 1000px;
+}
+
+.ReplyInput span {
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 3px 10px;
+  transition: 0.5s;
+  white-space: nowrap;
+}
+
+.SpanSuccess {
+  background: black;
+  color: white;
+}
+
+.SpanConfirm {
+  background: #5cb85c;
+  color: white;
+}
+
+.SpanDanger {
+  background: #d9534f;
+  color: white;
+}
+
+.SpanSuccess:hover {
+  background: #356e80;
+}
+
+.SpanConfirm:hover {
+  background: #316431;
+}
+
+.SpanDanger:hover {
+  background: #7e2f2d;
+}
+
+@media (max-width: 992px) {
+  .CommentButton {
+    flex-direction: column;
+  }
+  .Verify {
+    justify-content: center;
+  }
+}

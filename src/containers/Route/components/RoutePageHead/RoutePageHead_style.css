@@ -1,0 +1,31 @@
+:root {
+    --r_d_avatar_height: 70px;
+}
+.r_d_avatar_con {
+    overflow: hidden;
+    border-radius: 50%;
+    width: var(--r_d_avatar_height);
+    height: var(--r_d_avatar_height);
+    background-color: #000000;
+}
+.r_d_avatar_con img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.r_d_avatar_name {
+    line-height: var(--r_d_avatar_height);
+}
+
+@media (max-width: 768px) {
+    :root {
+        --r_d_avatar_height: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --r_d_avatar_height: 40px;
+    }
+}

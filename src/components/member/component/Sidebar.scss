@@ -1,0 +1,103 @@
+@mixin md {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+.member-sidebar {
+  font-family: Noto Sans CJK TC;
+
+  @include md {
+    margin-top: 15vh;
+  }
+
+  .myPhoto {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #eeeeee;
+    border-radius: 50%;
+    margin-top: 100px;
+    overflow: hidden;
+
+    @include md {
+      margin: 0 auto;
+    }
+
+    .originPhoto {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .userName {
+    margin-top: 16px;
+    font-weight: bold;
+
+    @include md {
+      text-align: center;
+    }
+  }
+
+  ul {
+    margin-top: 80px;
+
+    .redBoxlg {
+      background-color: #f52a2a;
+      height: 147px;
+      width: 12px;
+      transform: translate(-15px, 30%);
+    }
+
+    .redBoxsm {
+      background-color: #f52a2a;
+      height: 34px;
+      width: 12px;
+      transform: translate(-15px, 30%);
+      // margin-right:15px;
+    }
+
+    li {
+      margin-bottom: 63px;
+
+      a {
+        color: #000000;
+        font-weight: 600;
+        @include md {
+          text-align: center;
+          display: block;
+          color: black;
+        }
+      }
+
+      a:hover {
+        color: black;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        padding-bottom: 2px;
+        border-bottom: 4px solid #f52a2a;
+        transition: 0.5s;
+
+        @include md {
+          border-bottom: none;
+        }
+      }
+
+      ul {
+        margin-top: 16px;
+
+        li {
+          margin-bottom: 16px;
+
+          a {
+            font-weight: normal;
+            color: black;
+          }
+        }
+      }
+
+      a {
+        // color: black;
+      }
+    }
+  }
+}
